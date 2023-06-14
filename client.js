@@ -15,6 +15,14 @@ const connect = function () {
     console.log("Server says:", data);
   });
 
+  // Event handler for when the connection is successfully established
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+
+    // Send the name to the server
+    conn.write("Name: SSR"); // Replace SNK with your three-letter initials
+  });
+
   return conn;
 };
 
