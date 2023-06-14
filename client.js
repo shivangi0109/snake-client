@@ -1,7 +1,7 @@
 const net = require("net");
 
 // establishes a connection with the game server
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
     host: "localhost",
     port: 50541
@@ -22,6 +22,34 @@ const connect = function () {
     // Send the name to the server
     conn.write("Name: SSR"); // Replace SNK with your three-letter initials
   });
+
+  // conn.on("connect", () => {
+  //   // Send the string "Move: up" as data to the server
+  //   // sendMoves();
+  //   // startMovingUp();
+  // });
+
+  // Function to send multiple "Move: up" commands with a delay
+  // function sendMoves() {
+  //   setTimeout(() => {
+  //     conn.write("Move: up");
+  //     setTimeout(() => {
+  //       conn.write("Move: up");
+  //       setTimeout(() => {
+  //         conn.write("Move: up");
+  //       }, 1000);
+  //     }, 1000);
+  //   }, 1000);
+  // }
+
+  // Function to start moving the snake up every 50ms
+  // function startMovingUp() {
+  //   const moveUp = setInterval(() => {
+  //     conn.write("Move: up");
+  //   }, 50);
+
+  //   clearInterval(moveUp);
+  // }
 
   return conn;
 };
