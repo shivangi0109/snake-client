@@ -1,3 +1,5 @@
+const { MOVEMENT_COMMANDS } = require("./constants");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -18,13 +20,13 @@ const handleUserInput = function(key) {
     // Ctrl + C was pressed, terminate the game
     process.exit();
   } else if (key === 'w') {
-    connection.write("Move: up"); // Use the connection object to send the movement command.
+    connection.write(MOVEMENT_COMMANDS.UP); // Use the movement command from the MOVEMENT_COMMANDS constant.
   } else if (key === 'a') {
-    connection.write("Move: left");
+    connection.write(MOVEMENT_COMMANDS.LEFT);
   } else if (key === 's') {
-    connection.write("Move: down");
+    connection.write(MOVEMENT_COMMANDS.DOWN);
   } else if (key === 'd') {
-    connection.write("Move: right");
+    connection.write(MOVEMENT_COMMANDS.RIGHT);
   } else if (key === 'q') {
     connection.write("Say: Hello!"); // Send a canned message to the server
   } else if (key === 'e') {
