@@ -24,11 +24,6 @@ const connect = function() {
     conn.write("Name: SSR"); // Replace SNK with your three-letter initials
   });
 
-  // conn.on("connect", () => {
-  //   // Send the string "Move: up" as data to the server
-  //   conn.write("Move: up");
-  // });
-
   return conn;
 };
 
